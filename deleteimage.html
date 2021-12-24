@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Image</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h2 {
+            color: black;
+            text-align: center;
+            margin-top: 6%;
+            font-weight: 900;
+        }
+
+        .container {
+
+            border: 1px solid black;
+            
+            background: linear-gradient(to right, #333243, #229987);
+            color: white;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">SMS</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="./about.html"><i class="fas fa-address-card"></i> About Me</a></li>
+            <li><a href="./gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="./contact.html"><i class="fas fa-address-book"></i> Contact me</a></li>
+            <li><a href="./galleryadmin.html" class="active"><i class="fas fa-user-cog"></i> Gallery-Admin</a></li>
+        </ul>
+    </nav>
+    <!-- delete image section -->
+    <section class="delete-image">
+        <h2>Delete Image</h2>
+        <div class="container">
+            <form>
+                <div class="form-group row">
+                    <label for="id" class=" col-sm-4 col-form-label">ID</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="id" id="id" placeholder="Enter ID">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- footer section -->
+    <section class="footer">
+        <div class="social">
+            <a href="https://www.instagram.com/vanamalamanish/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/manish-vanamala" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/vanamala-manish/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100009753491960" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+        </div>
+        <div class="list">
+            <ul>
+                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="./about.html"><i class="fas fa-address-card"></i> About Me</a></li>
+                <li><a href="./gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="./contact.html"><i class="fas fa-address-book"></i> Contact me</a></li>
+                <li><a href="./galleryadmin.html" class="active"><i class="fas fa-user-cog"></i> Gallery-Admin</a></li>
+            </ul>
+        </div>
+        <p class="copyright">
+            &copy By Vanamala Manish @ 2021
+        </p>
+    </section>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = form.id.value;
+            console.log(id);
+            const res = await fetch('http://localhost:3000/images/' + id, {
+                method: "DELETE"
+            });
+            console.log(id);
+            window.location.replace("http://127.0.0.1:5500/gallery.html");
+        });
+    </script>
+</body>
+
+</html>

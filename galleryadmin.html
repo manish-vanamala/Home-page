@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish | MyGallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">SMS</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="./about.html"><i class="fas fa-address-card"></i> About Me</a></li>
+            <li><a href="./gallery.html" ><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="./contact.html"><i class="fas fa-address-book"></i> Contact me</a></li>
+            <li><a href="#" class="active"><i class="fas fa-user-cog"></i> Gallery-Admin</a></li>
+        </ul>
+    </nav>
+    <!-- gallery admin section -->
+    <h2 class="admin-title">Gallery Admin</h2>
+    <section class="admin">
+       
+        <button onclick="addImage()">Add Image</button>
+        <button onclick="updateImage()">Update Image</button>
+        <button onclick="removeImage()">Remove Image</button>
+    </section>
+    <!-- footer section -->
+    <section class="footer">
+        <div class="social">
+            <a href="https://www.instagram.com/vanamalamanish/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/manish-vanamala" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/vanamala-manish/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100009753491960" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="list">
+            <ul>
+                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="./about.html"><i class="fas fa-address-card"></i> About Me</a></li>
+                <li><a href="./gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="./contact.html"><i class="fas fa-address-book"></i> Contact me</a></li>
+                <li><a href="#" class="active"><i class="fas fa-user-cog"></i> Gallery-Admin</a></li>
+            </ul>
+        </div>
+        <p class="copyright">
+            &copy By Vanamala Manish @ 2021
+        </p>
+    </section>
+    <script>
+        function addImage(){
+            location.href = "./addimage.html";
+        }
+        function updateImage(){
+            location.href = "./updateimage.html";
+        }
+        function removeImage(){
+            location.href = "./deleteimage.html";
+        }
+    </script>
+    
+</body>
+</html>
